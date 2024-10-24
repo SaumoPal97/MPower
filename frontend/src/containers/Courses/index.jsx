@@ -104,6 +104,9 @@ function Courses() {
             />
             <Button onClick={createCourse}>Create</Button>
           </div>
+          <p className="font-bold text-2xl leading-none mt-10 text-center">
+            Or Use our AI assistant for getting course suggestions below
+          </p>
         </div>
       </div>
     </>
