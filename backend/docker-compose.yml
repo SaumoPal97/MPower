@@ -1,0 +1,64 @@
+version: "3.8"
+
+services:
+  mpower_backend:
+    build: .
+    container_name: mpower_backend
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - .:/usr/src/app
+    ports:
+      - "8000:8000"
+    environment:
+      - CELERY_BROKER_URL=${CELERY_BROKER_URL}
+      - STT_API_KEY=${STT_API_KEY}
+      - STT_URL=${STT_URL}
+      - TTS_API_KEY=${TTS_API_KEY}
+      - TTS_URL=${TTS_URL}
+      - SERPER_API_KEY=${SERPER_API_KEY}
+      - WATSONX_PROJECTID=${WATSONX_PROJECTID}
+      - WATSONX_APIKEY=${WATSONX_APIKEY}
+      - WATSONX_URL=${WATSONX_URL}
+      - POSTGRES_DB=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    depends_on:
+      - pgdb
+      - redis
+  celery:
+    build: .
+    command: celery -A mpower worker -E -l info 
+    volumes:
+      - .:/usr/src/app
+    depends_on:
+      - mpower_backend
+      - redis
+    environment:
+      - CELERY_BROKER_URL=${CELERY_BROKER_URL}
+      - STT_API_KEY=${STT_API_KEY}
+      - STT_URL=${STT_URL}
+      - TTS_API_KEY=${TTS_API_KEY}
+      - TTS_URL=${TTS_URL}
+      - SERPER_API_KEY=${SERPER_API_KEY}
+      - WATSONX_PROJECTID=${WATSONX_PROJECTID}
+      - WATSONX_APIKEY=${WATSONX_APIKEY}
+      - WATSONX_URL=${WATSONX_URL}
+      - POSTGRES_DB=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+  pgdb:
+    image: postgres
+    container_name: pgdb
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_DB=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    volumes:
+        - pgdata:/var/lib/postgresql/data/
+  redis:
+    image: "redis:alpine"
+        
+volumes:
+    pgdata:
