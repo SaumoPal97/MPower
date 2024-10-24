@@ -39,21 +39,20 @@ Real life usecases are available in our [description document](./DESCRIPTION.md)
 ### IBM watsonx product(s) used
 
 - [watsonx.ai](https://www.ibm.com/products/watsonx-ai)
-  - Used as the primary LLM and function calling LLM in [crew.ai](https://crew.ai) agentic system for creating personalised courses
-    - [Usecase 1]()
-    - [Usecase 2]()
+  - Used as the primary LLM and function calling LLM in [crewai.com](https://www.crewai.com/) agentic system for creating personalised courses
+    - [Usecase 1](./backend/courses/crew.py)
   - Used for generating vector embeddings for storing course and bank offer details in vector store
-    - [Usecase 1]()
-    - [Usecase 2]()
+    - [Usecase 1](./backend/courses/tasks.py)
+    - [Usecase 2](./backend/bankoffers/tasks.py)
   - Used as the chat LLM for asking course or bank offer related queries
-    - [Usecase 1]()
-    - [Usecase 2]()
+    - [Usecase 1](./backend/courses/views.py)
+    - [Usecase 2](./backend/bankoffers/views.py)
   - Used as the LLM integration for watsonx Assistant to get AI powered answers
-    - [Usecase 1]()
+    - [Usecase 1](./frontend/src/containers/Courses/index.jsx)
 
 - [watsonx Assistant](https://cloud.ibm.com/catalog/services/watsonx-assistant)
   - Used as the chat interface for students to interact and get suggested course ideas by integrating with watsonx.ai
-    - [Usecase 1]()
+    - [Usecase 1](./frontend/src/containers/Courses/index.jsx)
 
 ### Other IBM technology used
 
@@ -66,11 +65,11 @@ Real life usecases are available in our [description document](./DESCRIPTION.md)
 
 - [Speech to Text](https://cloud.ibm.com/catalog/services/speech-to-text)
   - Used as an alternative medium to take user inputs for the chat interface
-    - [Usecase 1]()
+    - [Usecase 1](./backend/speech/views.py)
 
 - [Text to Speech](https://cloud.ibm.com/catalog/services/text-to-speech)
   - Used as TTS for LLM chat responses in the chat interface
-    - [Usecase 1]()
+    - [Usecase 1](./backend/speech/views.py)
 
 ### Solution architecture
 ![Architecture](./images/architecture.jpg)
@@ -143,7 +142,7 @@ See below for our proposed schedule on next steps after Call for Code 2024 submi
 1. Run `cd frontend/`
 2. Run `npm install`
 3. Make a copy of `.env.sample`, name it `.env` and fill the variables
-4. Run `npm run start`
+4. Run `npm run dev`
 
 ## Contributors:
 
