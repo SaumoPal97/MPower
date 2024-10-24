@@ -30,7 +30,7 @@ MPower focuses on using generative AI to provide climate-affected women with sus
 
 Many women, particularly in rural and agricultural communities, like Africa, India, SE Asia, depend on climate-sensitive industries like farming, livestock rearing, or fishing. As climate change disrupts weather patterns, causes crop failures, or diminishes water resources, these women are left vulnerable to losing their primary source of income.
 
-MPower would use generative AI to create tailored livelihood suggestions based on available local resources, skills, and climate conditions. It could help women transition to new, sustainable income-generating activities that are more resilient to climate change. The AI could also generate business ideas, provide training recommendations, and connect users to microloan programs.
+MPower would use generative AI to create tailored livelihood suggestions based on available local resources, skills, and climate conditions. It could help women transition to new, sustainable income-generating activities that are more resilient to climate change. The AI could also generate business ideas, provide training recommendations, and connect users to microfinance loan programs.
 
 Real life usecases are available in our [description document](./DESCRIPTION.md).
 
@@ -42,7 +42,7 @@ Real life usecases are available in our [description document](./DESCRIPTION.md)
   - Used as the primary LLM and function calling LLM in [crew.ai](https://crew.ai) agentic system for creating personalised courses
     - [Usecase 1]()
     - [Usecase 2]()
-  - Used for generating vector embeddings for storing course and bank offer details in vectorstore
+  - Used for generating vector embeddings for storing course and bank offer details in vector store
     - [Usecase 1]()
     - [Usecase 2]()
   - Used as the chat LLM for asking course or bank offer related queries
@@ -69,7 +69,7 @@ Real life usecases are available in our [description document](./DESCRIPTION.md)
     - [Usecase 1]()
 
 - [Text to Speech](https://cloud.ibm.com/catalog/services/text-to-speech)
-  - Used as TTS for LLM chat responses in the cta interface
+  - Used as TTS for LLM chat responses in the chat interface
     - [Usecase 1]()
 
 ### Solution architecture
@@ -104,13 +104,13 @@ Real life usecases are available in our [description document](./DESCRIPTION.md)
 
 ### Solution demo video
 
-[![Watch the video](https://raw.githubusercontent.com/Liquid-Prep/Liquid-Prep/main/images/readme/IBM-interview-video-image.png)](https://youtu.be/vOgCOoy_Bx0)
+[![Watch the video](./images/yt.png)](https://youtu.be/3EYv54Hg5kg?si=fLpKL3E232uTRzb2)
 
 ### Project development roadmap
 
 MPower currently does the following things.
 
-- Provide AI powered course suggestions based on the students' profiles
+- AI powered course suggestions based on the students' profiles
 - AI powered personalised course builder
 - AI chatbot to ask course related doubts
 - AI powered tool to analyse bank offers and build a knowledge base
@@ -131,8 +131,19 @@ See below for our proposed schedule on next steps after Call for Code 2024 submi
 
 ### How to run the project
 
-INSTRUCTIONS: In this section you add the instructions to run your project on your local machine for development and testing purposes. You can also add instructions on how to deploy the project in production.
+#### Backend
 
+1. Run `cd backend/`
+2. Make a copy of `.env.sample`, name it `.env` and fill the variables
+3. Run `docker-compose -f docker-compose.yml build`
+3. Run `docker-compose -f docker-compose.yml up`
+
+#### Frontend
+
+1. Run `cd frontend/`
+2. Run `npm install`
+3. Make a copy of `.env.sample`, name it `.env` and fill the variables
+4. Run `npm run start`
 
 ## Contributors:
 
