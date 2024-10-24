@@ -1,21 +1,13 @@
-[![License](https://img.shields.io/badge/License-Apache2-blue.svg)](https://www.apache.org/licenses/LICENSE-2.0) [![Community](https://img.shields.io/badge/Join-Community-blue)](https://developer.ibm.com/callforcode/solutions/projects/get-started/)
+[![License](https://img.shields.io/badge/License-Apache2-blue.svg)](https://www.apache.org/licenses/LICENSE-2.0)
 
-_INSTRUCTIONS: This GitHub repository serves as a template and example you can use to create a well documented README for your project for the [2024 Call for Code Global Challenge](https://developer.ibm.com/callforcode/global-challenge/)._
-
-Your required deliverables and project descriptions should be officially submitted to your My Team > Submissions section of the [Call for Code Global Challenge web site](https://compete.callforcode.skillsnetwork.site/competitions/2024-call-for-code-global-challenge), but you can also optionally include them here for completeness, as it is good practice to clearly document your project in your README file. Replace the examples seen here with your own deliverable links.
-
-Use the **Use this template** button to create a new version of this repository and start entering content for your own Call for Code submission project. Make sure you have [registered for the 2024 Call for Code Global Challenge](https://www.ibm.com/account/reg/signup?formid=urx-52643) to access resources and full project submission instructions. Remove any "INSTRUCTIONS" sections when you are ready to submit your project.
-
-_New to Git and GitHub? This free online course will get you up to speed quickly: [Getting Started with Git and GitHub](https://www.coursera.org/learn/getting-started-with-git-and-github)_.
-
-# Replace this heading with your team/submission name
+# MPower - Empowering women through AI driven personalised courses
 
 - [Project summary](#project-summary)
   - [The issue we are hoping to solve](#the-issue-we-are-hoping-to-solve)
   - [How our technology solution can help](#how-our-technology-solution-can-help)
   - [Our idea](#our-idea)
 - [Technology implementation](#technology-implementation)
-  - [IBM watsonx product(s) used](#ibm-ai-services-used)
+  - [IBM watsonx product(s) used](#ibm-watsonx-products-used)
   - [Other IBM technology used](#other-ibm-technology-used)
   - [Solution architecture](#solution-architecture)
 - [Presentation materials](#presentation-materials)
@@ -23,80 +15,92 @@ _New to Git and GitHub? This free online course will get you up to speed quickly
   - [Project development roadmap](#project-development-roadmap)
 - [Additional details](#additional-details)
   - [How to run the project](#how-to-run-the-project)
-  - [Live demo](#live-demo)
-- [About this template](#about-this-template)
-  - [Contributing](#contributing)
-  - [Versioning](#versioning)
-  - [Authors](#authors)
-  - [License](#license)
-  - [Acknowledgments](#acknowledgments)
-
-_INSTRUCTIONS: Below are the suggested sections to include in your README file to make sure your project is well documented. You can remove this instruction text._
 
 ## Project summary
 
 ### The issue we are hoping to solve
 
-REPLACE THIS SENTENCE with a short description, 2-3 sentences in length, of the specific sustainability problem your solution is meant to address.
+Women in climate-affected areas often face economic instability as climate change disrupts traditional livelihoods like agriculture, livestock rearing, and fishing. In many communities, women are already economically marginalised, and climate-induced loss of income exacerbates poverty and gender inequality. Finding sustainable, alternative livelihood opportunities is challenging, especially in rural areas with limited access to formal education, resources, or markets.
 
 ### How our technology solution can help
 
-REPLACE THIS SENTENCE with a short description of your team's solution, in about 10 words.
+MPower focuses on using generative AI to provide climate-affected women with sustainable, alternative livelihoods.
 
 ### Our idea
 
-INSTRUCTIONS: Replace this paragraph with a longer description of your solution. In about 500 words, describe your solution in more detail. Include the real-world problem you identified, describe the technological solution you have created, and explain how it’s an improvement over existing solutions. You can supply additional documentation in this source code repository that you link to as well.
+Many women, particularly in rural and agricultural communities, like Africa, India, SE Asia, depend on climate-sensitive industries like farming, livestock rearing, or fishing. As climate change disrupts weather patterns, causes crop failures, or diminishes water resources, these women are left vulnerable to losing their primary source of income.
 
-More detail is available in our [description document](./docs/DESCRIPTION.md).
+MPower would use generative AI to create tailored livelihood suggestions based on available local resources, skills, and climate conditions. It could help women transition to new, sustainable income-generating activities that are more resilient to climate change. The AI could also generate business ideas, provide training recommendations, and connect users to microloan programs.
+
+Real life usecases are available in our [description document](./DESCRIPTION.md).
 
 ## Technology implementation
 
 ### IBM watsonx product(s) used
 
-_INSTRUCTIONS: Included here is a list of IBM watsonx products. Remove any products you did not use. Leave only those included in your solution code. In your official submission on the Call for Code Global Challenge web site, you are required to provide details on where and how you used each IBM watsonx product so judges can review your implementation. Remove these instructions._
+- [watsonx.ai](https://www.ibm.com/products/watsonx-ai)
+  - Used as the primary LLM and function calling LLM in [crew.ai](https://crew.ai) agentic system for creating personalised courses
+    - [Usecase 1]()
+    - [Usecase 2]()
+  - Used for generating vector embeddings for storing course and bank offer details in vectorstore
+    - [Usecase 1]()
+    - [Usecase 2]()
+  - Used as the chat LLM for asking course or bank offer related queries
+    - [Usecase 1]()
+    - [Usecase 2]()
+  - Used as the LLM integration for watsonx Assistant to get AI powered answers
+    - [Usecase 1]()
 
-**Featured watsonx products**
-
-- [watsonx.ai](https://www.ibm.com/products/watsonx-ai) - WHERE AND HOW THIS IS USED IN OUR SOLUTION
-
-- [watsonx.governance](https://www.ibm.com/products/watsonx-governance) - WHERE AND HOW THIS IS USED IN OUR SOLUTION
-
-- [watsonx Assistant](https://cloud.ibm.com/catalog/services/watsonx-assistant) - WHERE AND HOW THIS IS USED IN OUR SOLUTION
+- [watsonx Assistant](https://cloud.ibm.com/catalog/services/watsonx-assistant)
+  - Used as the chat interface for students to interact and get suggested course ideas by integrating with watsonx.ai
+    - [Usecase 1]()
 
 ### Other IBM technology used
 
-INSTRUCTIONS: List any other IBM technology or IBM AI services used in your solution and describe how each component was used. If you can provide details on where these were used in your code, that would help the judges review your submission.
+- [Watson Machine Learning](https://cloud.ibm.com/catalog/services/watson-machine-learning) 
+  - Used for setting up watsonx.ai and watsonx Assistant
 
-**Additional IBM AI services (Remove any that you did not use)**
+- [Watson Studio](https://cloud.ibm.com/catalog/services/watson-studio)
+  - Used for setting up watsonx.ai and watsonx Assistant
+  - Used for prototyping and testing prompts which finally went into the respective LLMs above
 
-- [Watson Machine Learning](https://cloud.ibm.com/catalog/services/watson-machine-learning) - WHERE AND HOW THIS IS USED IN OUR SOLUTION
+- [Speech to Text](https://cloud.ibm.com/catalog/services/speech-to-text)
+  - Used as an alternative medium to take user inputs for the chat interface
+    - [Usecase 1]()
 
-- [Watson Studio](https://cloud.ibm.com/catalog/services/watson-studio) - WHERE AND HOW THIS IS USED IN OUR SOLUTION
-
-- [Natural Language Understanding](https://cloud.ibm.com/catalog/services/natural-language-understanding) - WHERE AND HOW THIS IS USED IN OUR SOLUTION
-
-- [Speech to Text](https://cloud.ibm.com/catalog/services/speech-to-text) - WHERE AND HOW THIS IS USED IN OUR SOLUTION
-
-- [Text to Speech](https://cloud.ibm.com/catalog/services/text-to-speech) - WHERE AND HOW THIS IS USED IN OUR SOLUTION
-
-- [Language Translator](https://cloud.ibm.com/catalog/services/language-translator) - WHERE AND HOW THIS IS USED IN OUR SOLUTION
+- [Text to Speech](https://cloud.ibm.com/catalog/services/text-to-speech)
+  - Used as TTS for LLM chat responses in the cta interface
+    - [Usecase 1]()
 
 ### Solution architecture
+![Architecture](./images/architecture.jpg)
 
-REPLACE THIS EXAMPLE WITH YOUR OWN, OR REMOVE THIS EXAMPLE
+#### For Courses
 
-Diagram and step-by-step description of the flow of our solution:
+1. The user comes to the webapp (web/mobile) and asks AI to create a course
+2. Basic information regarding the course is saved on Postgres DB and then sent to Celery workers for creating the course
+3. Crew AI agentic system picks up the tasks and using a combination of watsonx.ai Granite LLMs and Langchain tools, create a complete course end-to-end
+4. The course is then converted into embeddings using watsonx.ai embedding models and stored in ElasticDB (ChromaDB for testing)
+5. When the user goes through the course, she sees a AI chatbot. When she queries the chatbot for questions and doubts, an AI generated response is returned by running RAG on watsonx.ai models and previously created embeddings
+6. (Optional) Users can ask questions through speech to the AI chatbot via IBM Speech to Text
+7. (Optional) Users can listen to AI responses through IBM Text to Speech
+8. User can also ask Watsonx Assistant chatbot for course suggestions based on her profile
 
-![Video transcription/translaftion app](https://developer.ibm.com/developer/tutorials/cfc-starter-kit-speech-to-text-app-example/images/cfc-covid19-remote-education-diagram-2.png)
 
-1. The user navigates to the site and uploads a video file.
-2. Watson Speech to Text processes the audio and extracts the text.
-3. Watson Translation (optionally) can translate the text to the desired language.
-4. The app stores the translated text as a document within Object Storage.
+
+#### For Bank Offers
+
+1. The bank officer comes to the webapp (web/mobile) and adds a new microfinance loan offer
+2. Basic information regarding the bank is saved on Postgres DB and then sent to Celery workers for extracting data from the bank offer pdf and url
+3. A celery process picks up the task and using a combination of watsonx.ai Granite LLMs and Langchain tools, extracts all information regarding the loan from the bank offer pdf and bank url
+4. The offer details are then converted into embeddings using watsonx.ai embedding models and stored in ElasticDB (ChromaDB for testing)
+5. When the user checks out all the bank offers, she sees a AI chatbot. When she queries the chatbot for questions and doubts, an AI generated response is returned by running RAG on watsonx.ai models and previously created embeddings
+6. (Optional) Users can ask questions through speech to the AI chatbot via IBM Speech to Text 
+7. (Optional) Users can listen to AI responses through IBM Text to Speech
+8. This step is not relevant for bank offers
+
 
 ## Presentation materials
-
-_INSTRUCTIONS: The following deliverables should be officially posted to your My Team > Submissions section of the [Call for Code Global Challenge resources site](https://cfc-prod.skillsnetwork.site/), but you can also include them here for completeness. Replace the examples seen here with your own deliverable links._
 
 ### Solution demo video
 
@@ -104,13 +108,20 @@ _INSTRUCTIONS: The following deliverables should be officially posted to your My
 
 ### Project development roadmap
 
-The project currently does the following things.
+MPower currently does the following things.
 
-- Feature 1
-- Feature 2
-- Feature 3
+- Provide AI powered course suggestions based on the students' profiles
+- AI powered personalised course builder
+- AI chatbot to ask course related doubts
+- AI powered tool to analyse bank offers and build a knowledge base
+- AI chatbot to ask best bank offers and offer related doubts
+- TTS and STT features on our AI chatbot for easier usage
 
-In the future we plan to...
+In the future we plan to
+- Provide multilingual support to address the needs of rural women from diverse backgrounds
+- Build a richer course creator functionality powered by Granite models
+- Incorporate social and community tools for women entrepreneurs across the world to interact and share their knowledge
+- Launch V1 of an AI powered business coach to not just help women entrepreneurs learn new business courses but also help them launch, scale and become financially successful in their endeavour
 
 See below for our proposed schedule on next steps after Call for Code 2024 submission.
 
@@ -118,44 +129,11 @@ See below for our proposed schedule on next steps after Call for Code 2024 submi
 
 ## Additional details
 
-_INSTRUCTIONS: The following deliverables are suggested, but **optional**. Additional details like this can help the judges better review your solution. Remove any sections you are not using._
-
 ### How to run the project
 
 INSTRUCTIONS: In this section you add the instructions to run your project on your local machine for development and testing purposes. You can also add instructions on how to deploy the project in production.
 
-### Live demo
 
-You can find a running system to test at...
+## Contributors:
 
-See our [description document](./docs/DESCRIPTION.md) for log in credentials.
-
----
-
-_INSTRUCTIONS: You can remove the below section from your specific project README._
-
-## About this template
-
-### Contributing
-
-Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests to us.
-
-### Versioning
-
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags).
-
-### Authors
-
-<a href="https://github.com/Call-for-Code/Project-Sample/graphs/contributors">
-  <img src="https://contributors-img.web.app/image?repo=Call-for-Code/Project-Sample" />
-</a>
-
-- **Billie Thompson** - _Initial work_ - [PurpleBooth](https://github.com/PurpleBooth)
-
-### License
-
-This project is licensed under the Apache 2 License - see the [LICENSE](LICENSE) file for details.
-
-### Acknowledgments
-
-- Based on [Billie Thompson's README template](https://gist.github.com/PurpleBooth/109311bb0361f32d87a2).
+* [Saumo Pal](https://github.com/SaumoPal97)
